@@ -1,5 +1,4 @@
-import { create as createHTTPClient } from 'ipfs-http-client';
-
+import { create as createHTTPClient } from 'kubo-rpc-client';
 const ipfsHTTPClient = createHTTPClient({ url: 'http://ipfs.slonig.org:5001' });
 
 export async function getIPFSContentID(ipfs: any, content: string) {
@@ -29,6 +28,6 @@ async function addTextToIPFS(text: string): Promise<string | null> {
 }
 
 (async () => {
-    const text: string = 'Denis-20231017-2024';
+    const text: string = 'Denis-20231021-0859';
     await addTextToIPFS(text);
 })();

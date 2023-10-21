@@ -16,7 +16,7 @@
     "@multiformats/multiaddr": "^12.1.7",
     "@slonigiraf/helpers": "^5.2.0",
     "ipfs-core": "^0.18.1",
-    "ipfs-http-client": "^60.0.1",
+    "kubo-rpc-client": "^3.0.1",
     "multiaddr": "^10.0.1"
   },
   "devDependencies": {
