@@ -1,6 +1,6 @@
 import { create as createHTTPClient } from 'kubo-rpc-client';
 import { IPFSHTTPClient, CID } from 'kubo-rpc-client'
-const ipfsHTTPClient = createHTTPClient({ url: 'http://ipfs.slonig.org:5001' });
+const ipfsHTTPClient = createHTTPClient({ url: 'https://ipfs.slonig.org/api/v0' });
 
 interface GetResult {
     value: any
