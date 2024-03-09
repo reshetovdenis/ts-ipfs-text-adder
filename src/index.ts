@@ -63,9 +63,19 @@ async function addTextToIPFS(text: string): Promise<string | null> {
     }
 }
 
-(async () => {
-    // const text: string = 'Denis-20231021-0859';
-    // await addTextToIPFS(text);
-    const data = await getIPFSDataFromContentID_DAG(ipfsHTTPClient, 'bafyreia4mjjadwle4g7gzclephmdlikkxzekj74vvorimnbowwnn5fbggq');
+async function loadTestIteration() {
+    const client = createHTTPClient({ url: 'https://ipfs.slonig.org/api/v0' });
+    const data = await getIPFSDataFromContentID_DAG(client, 'bafyreia4mjjadwle4g7gzclephmdlikkxzekj74vvorimnbowwnn5fbggq');
     console.log(data);
+}
+const loadTest = async (numConnections: number) => {
+    const promises = [];
+    for (let i = 0; i < numConnections; i++) {
+        promises.push(loadTestIteration());
+    }
+    await Promise.all(promises);
+};
+
+(async () => {
+    loadTest(200);
 })();
